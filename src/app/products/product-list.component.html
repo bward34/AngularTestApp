@@ -23,7 +23,7 @@
                 <td><img *ngIf='showImage' src={{team.logo}}
                          [style.width.px]='imageWidth'
                          [style.margin.px]='imageMargin'></td>
-                <td>{{team.teamName | uppercase}}</td>
+                <td><a [routerLink]="['/teams', team.teamName]">{{team.teamName | uppercase}}</a></td>
                 <td>{{team.city | convertToDash: 'a'}}</td>
                 <td>{{team.superBowls}}</td>
                 <td><team-star [trophy]='team.superBowls'

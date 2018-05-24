@@ -4,7 +4,8 @@ import { ITeam } from './team';
 import { TeamsService } from './product.service';
 
 @Component({
-    selector: 'pm-products',
+    //removed becuase we no longer need becuase of routing
+   // selector: 'pm-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
@@ -44,14 +45,14 @@ export class ProductListComponent implements OnInit {
     }
     //Use this when implmenting on Init
     ngOnInit(): void {
-        //this.teams = this._teamService.getTeams();
+        this.teams = this._teamService.getTeams();
         //HTTP WAY ******************************************
-        this._teamService.getTeams()
-        .subscribe(teams => {
-                    this.teams = teams;
-                    this.filteredTeams = this.teams;
-           },
-           error => this.errorMessage = <any> error);
-        //this.filteredTeams = this.teams; //had to move from constructor otherwise that will not load and it will be empty      
+        // this._teamService.getTeams()
+        // .subscribe(teams => {
+        //             this.teams = teams;
+        //             this.filteredTeams = this.teams;
+        //    },
+        //    error => this.errorMessage = <any> error);
+        this.filteredTeams = this.teams; //had to move from constructor otherwise that will not load and it will be empty      
     }
 }
