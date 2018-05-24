@@ -1,0 +1,35 @@
+<div class='test-div'>
+    <h1>{{pageTitle}}</h1>
+    <div> Sort by
+        <input type='text'
+        [(ngModel)]='listFilter'/>
+    </div>
+    <table class='team-info' *ngIf='teams'>
+        <thead>
+            <tr>
+                <th>
+                    <button class='btn btn-primary' (click)='toggleImage()'>
+                     {{showImage ? 'Hide' : 'Show'}} team logo
+                    </button>
+                </th>
+                <th>Team Name</th>
+                <th>City</th>
+                <th>Num of Super Bowl Wins</th>
+                <th>Team Rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let team of filteredTeams'>
+                <td><img *ngIf='showImage' src={{team.logo}}
+                         [style.width.px]='imageWidth'
+                         [style.margin.px]='imageMargin'></td>
+                <td>{{team.teamName | uppercase}}</td>
+                <td>{{team.city | convertToDash: 'a'}}</td>
+                <td>{{team.superBowls}}</td>
+                <td><team-star [trophy]='team.superBowls'
+                               [team]='team.teamName'
+                               (trophyClicked)= 'onTrohpyClicked($event)'></team-star></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
