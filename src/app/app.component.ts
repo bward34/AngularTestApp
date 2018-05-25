@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TeamsService } from './products/product.service';
+
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,11 @@ import { TeamsService } from './products/product.service';
                </ul>
                 <title>{{title}}</title>
                   <router-outlet></router-outlet>
-                  <h1><team-star></team-star></h1>
               </div>
               <div>
               </div>
               `,
   styleUrls: ['./app.component.css'],
-  providers: [TeamsService]
 })
 
 
