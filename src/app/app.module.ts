@@ -8,9 +8,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { ProductListComponent} from './products/product-list.component';
 import { ConvertToDash} from './shared/convert-to-dash.pipe';
-import { StarComponent} from './shared/star.component';
-import { ProductDetail } from './products/product-detial.component.component';
-import { ProductModule} from './product/product.module'
+import { ProductModule } from './products/product.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +17,8 @@ import { ProductModule} from './product/product.module'
   imports: [
     BrowserModule,
     HttpClientModule,
+    ProductModule,
+    RouterModule.forRoot([{path: 'teams', component: ProductListComponent}])
   ],
   exports: [
   ],
