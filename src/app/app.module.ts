@@ -1,3 +1,4 @@
+//Root App Module
 import { BrowserModule } from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -26,6 +27,8 @@ import { ProductDetail } from './products/product-detial.component.component';
     RouterModule.forRoot([
       {path: 'teams', component: ProductListComponent},
       {path: 'teams/:id', component: ProductDetail}])
+  ],
+  exports: [
   ],
   bootstrap: [AppComponent]
 })
